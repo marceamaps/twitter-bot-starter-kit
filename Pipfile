@@ -1,0 +1,31 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+tweepy = "*"
+matplotlib = "*"
+Arpeggio = "*"
+Pillow = "==5.0.0"
+
+
+[dev-packages]
+
+nose = "*"
+ipython = "*"
+pylint = "*"
+ipdb = "*"
+
+
+[requires]
+
+python_version = "3.6"
+
+
+[scripts]
+
+test = "python -m nose tests"
