@@ -143,3 +143,12 @@ def run_turtle_program(source):
     img.save('image.png', 'png')
     turtle.Screen().bye()
     return 'image.png'
+
+if __name__ == '__main__':
+    run_turtle_program('''
+    maybe 0.9
+        color red
+        dot
+        forward 100
+    end maybe
+    ''')
