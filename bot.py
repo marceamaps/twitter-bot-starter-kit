@@ -9,13 +9,12 @@ def check_for_mentions():
     most_recent_status_id = last_response[0].id #figure out the status_id of our most recent response
 
     my_latest_mentions = api.mentions_timeline(since_id=most_recent_status_id) #Recognize a tweet that tags @twitter draw box 
-    my_latest_mention = my_latest_mentions[0]
 
-    mentioned_status_id =  my_latest_mention.id
-    mentioned_text = my_latest_mention.text[14:]
-    user_name = my_latest_mention.user.screen_name
-
-    return mentioned_text, mentioned_status_id, user_name
+    for mention in my_latest_mentions:
+        mentioned_status_id =  mention.id
+        mentioned_text = mention.text[14:]
+        user_name = mention.user.screen_name
+        reply_with_image(mentioned_status_id, mentioned_text, user_name)
 
 
 def reply_with_image(status_id, program_text, user_name):
@@ -38,8 +37,7 @@ def reply_with_image(status_id, program_text, user_name):
 # print(message)
 
 # api.update_with_media(image_file, program)
-program_text, status_id, user_name = check_for_mentions()
-print(reply_with_image(status_id, program_text, user_name))
+check_for_mentions()
 
 # from pprint import pprint
 
