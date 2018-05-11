@@ -41,7 +41,7 @@ expression = pen_change / fill_change / color / fillcolor / dot / rotation / mov
 body = statement+
 loop = ("loop" / "lp") positive_integer body ("end loop" / "el")
 
-probability = r'0\.\d{1,10}'
+probability = r'0?\.\d{1,10}'
 else_clause = "else" body
 maybe = ("maybe" / "mb") probability? body else_clause? ("end maybe" / "em")
 
