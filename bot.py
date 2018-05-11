@@ -21,7 +21,7 @@ def check_for_mentions():
 def reply_with_image(status_id, program_text, user_name):
 
     tagged_user_name = '@'+user_name  
-    error_status = tagged_user_name + " Sorry, I could't read that"
+    error_status = tagged_user_name + " Sorry, I could't read that. Try again!"
 
     try:
         image_file = run_turtle_program(program_text)
