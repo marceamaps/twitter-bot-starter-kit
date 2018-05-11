@@ -2,3 +2,5 @@ secrets.py
 __pycache__/
 *.pyc
 .vscode
+.eps
+.png

@@ -18,5 +18,8 @@ def read_color(color_string):
             return matplotlib.colors.cnames[color_string[0].value]
         except KeyError as e:
             raise UnknownColorError(e)
+    elif color_string[0].rule_name == 'color_string':
+        # I don't know why this happens, but w/e
+        return read_color(color_string[0])
     else:
         raise ValueError('Unknown format for color string ' + color_string[0].rule_name)
